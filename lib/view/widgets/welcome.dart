@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:student_data_in_state/widgets/navigation.dart';
+import 'package:student_data_in_state/view/widgets/navigation.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -15,7 +15,7 @@ class WelcomeScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                '          NY NOTE\n____________________',
+                '          NY  NOTE\n____________________',
                 style: TextStyle(
                     color: Color.fromARGB(255, 243, 214, 126),
                     fontSize: 45,

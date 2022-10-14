@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:student_data_in_state/database/model.dart';
-import 'package:student_data_in_state/widgets/constrants.dart';
+import 'package:student_data_in_state/model/model.dart';
+import 'package:student_data_in_state/view/widgets/constrants.dart';
 
 class UserDetails extends StatelessWidget {
   const UserDetails({Key? key, required this.studentModel}) : super(key: key);
@@ -47,7 +47,7 @@ class UserDetails extends StatelessWidget {
                           ),
                           Text(
                             studentModel.name,
-                            maxLines: 1,
+                            maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             style: const TextStyle(
                                 fontSize: 30, fontWeight: FontWeight.bold),
@@ -55,7 +55,9 @@ class UserDetails extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Image.asset('Assets/images/detailsName.png')
+                    Expanded(
+                        flex: 2,
+                        child: Image.asset('Assets/images/detailsName.png'))
                   ],
                 ),
               ),

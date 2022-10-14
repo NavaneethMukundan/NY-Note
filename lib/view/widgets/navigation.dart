@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:student_data_in_state/provider/provider.dart';
-import 'package:student_data_in_state/screens/home.dart';
-import 'package:student_data_in_state/screens/profile.dart';
+import 'package:student_data_in_state/controller/provider.dart';
+import 'package:student_data_in_state/view/home/home.dart';
+import 'package:student_data_in_state/view/profile/profile.dart';
 
 class NavigationBarPage extends StatelessWidget {
   NavigationBarPage({Key? key}) : super(key: key);

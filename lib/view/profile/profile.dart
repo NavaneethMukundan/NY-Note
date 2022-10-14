@@ -2,10 +2,10 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:student_data_in_state/provider/student_model.dart';
-import 'package:student_data_in_state/screens/details.dart';
-import 'package:student_data_in_state/screens/edit.dart';
-import 'package:student_data_in_state/screens/search.dart';
+import 'package:student_data_in_state/controller/student_model.dart';
+import 'package:student_data_in_state/view/profile/details.dart';
+import 'package:student_data_in_state/view/widgets/edit.dart';
+import 'package:student_data_in_state/view/widgets/search.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);

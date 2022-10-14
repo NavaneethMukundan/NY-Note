@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:student_data_in_state/database/model.dart';
-import 'package:student_data_in_state/widgets/constrants.dart';
+import 'package:student_data_in_state/model/model.dart';
+import 'package:student_data_in_state/view/widgets/constrants.dart';
 
 class EditingPage extends StatelessWidget {
   EditingPage({Key? key, required this.student}) : super(key: key);
@@ -88,6 +88,7 @@ class EditingPage extends StatelessWidget {
                     student.classs = classEditingController.text;
                     student.passOrfail = passOrFailEditingController.text;
                     student.school = schoolEditingController.text;
+                    Navigator.of(context).pop();
                   },
                   style: ElevatedButton.styleFrom(
                       minimumSize: const Size(80, 50),

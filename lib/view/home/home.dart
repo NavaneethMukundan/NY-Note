@@ -3,9 +3,9 @@ import 'dart:io';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:student_data_in_state/database/model.dart';
-import 'package:student_data_in_state/provider/student_model.dart';
-import 'package:student_data_in_state/widgets/constrants.dart';
+import 'package:student_data_in_state/model/model.dart';
+import 'package:student_data_in_state/controller/student_model.dart';
+import 'package:student_data_in_state/view/widgets/constrants.dart';
 
 class HomeScren extends StatelessWidget {
   HomeScren({Key? key}) : super(key: key);
@@ -25,7 +25,10 @@ class HomeScren extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  Image.asset('Assets/images/home_image.jpg'),
+                  Image.asset(
+                    'Assets/images/home_image.jpg',
+                    height: 280,
+                  ),
                   const Text(
                     'Fill The Form',
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
@@ -77,10 +80,6 @@ class HomeScren extends StatelessWidget {
                   ElevatedButton(
                       onPressed: () {
                         whenButtonClicked(context);
-                        nameController.clear();
-                        clasController.clear();
-                        passOrfailController.clear();
-                        schoolController.clear();
                       },
                       style: ElevatedButton.styleFrom(
                           shape: const StadiumBorder(),
@@ -108,7 +107,13 @@ class HomeScren extends StatelessWidget {
         passOrfail.isEmpty ||
         school.isEmpty ||
         image.isEmpty) {
-      return;
+      const snackbar = SnackBar(
+          backgroundColor: Colors.black,
+          content: Text(
+            'Data is Empty. Please fill the missing data',
+            style: TextStyle(color: Colors.white),
+          ));
+      ScaffoldMessenger.of(context).showSnackBar(snackbar);
     } else {
       final student = StudentModel(
           name: name,
@@ -118,6 +123,10 @@ class HomeScren extends StatelessWidget {
           image: image);
       Provider.of<StudentDataList>(context, listen: false)
           .addStudentList(student);
+      nameController.clear();
+      clasController.clear();
+      passOrfailController.clear();
+      schoolController.clear();
     }
   }
 

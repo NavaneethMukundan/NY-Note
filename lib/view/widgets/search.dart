@@ -2,8 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:student_data_in_state/provider/student_model.dart';
-import 'package:student_data_in_state/screens/details.dart';
+import 'package:student_data_in_state/controller/student_model.dart';
+import 'package:student_data_in_state/view/profile/details.dart';
 
 class SearchScreensss extends SearchDelegate {
   @override

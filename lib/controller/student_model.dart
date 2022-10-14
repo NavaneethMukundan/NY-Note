@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:hive/hive.dart';
-import 'package:student_data_in_state/database/model.dart';
+import 'package:student_data_in_state/model/model.dart';
 
 class StudentDataList with ChangeNotifier {
   StudentDataList() {
